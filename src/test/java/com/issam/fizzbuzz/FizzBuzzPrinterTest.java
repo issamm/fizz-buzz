@@ -41,6 +41,18 @@ public class FizzBuzzPrinterTest {
     @Test
     public void testFizzBuzzPrinter_to19(){
         StringBuilder stringBuilder = new StringBuilder();
+        new FizzBuzzPrinter(0, 19, result -> {
+            if(stringBuilder.length() > 0){
+                stringBuilder.append(",");
+            }
+            stringBuilder.append(result);
+        }).iterateAndPrint();
+        assertEquals(OUTPUT_OF_0_TO_19, stringBuilder.toString());
+    }
+
+    @Test
+    public void testFizzBuzzPrinter_15to20(){
+        StringBuilder stringBuilder = new StringBuilder();
         new FizzBuzzPrinter(15, 20, result -> {
             if(stringBuilder.length() > 0){
                 stringBuilder.append(",");
